@@ -1,20 +1,18 @@
-{% extends "base.html" %}
-
-{% block content %}
-    <h2>Add A Blog</h2>
-    <form action="/all_blogs" method='post'>
-        <label> Blog Title:
-            Title for your new blog:
-            <input id='blog_title' type="text" name='blog_title' /> <!--Change Made-->
-        </label>
-        <p></p>
-        <label>
-            Your new blog:
-            <textarea rows="4" cols="50" id='blog_body' name="blog_body" ></textarea> <!--Change Made-->
-        </label>
-        <p></p>
-        <input type="submit" value='Add blog' />
-    </form>
-
-
+{% extends 'base.html' %}
+{% block content %}    
+<h1>New Blog Post</h1>
+<form id=form action="/newpost" method='POST'>
+    <table>
+        <tr>
+            <td>Blog Title</td>
+            <td><input name="blog_title" type="text"}></td>
+        </tr>
+        <tr>
+            <td>Blog Post</td>
+            <td><textarea name="blog_post" type="textarea" rows="10" cols="100"></textarea></td>
+        </tr>
+    </table>
+    <p></p>
+    <input type="submit" value="Add Entry" />
+</form>
 {% endblock %}
